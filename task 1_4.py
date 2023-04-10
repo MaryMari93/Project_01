@@ -41,3 +41,4 @@ for product_name, product_code in titles.items():
 
 # Пример: "Кроссовки тип 3 (Adidas) - 31 шт, стоимость 50747 руб"
 
+# Отлично
