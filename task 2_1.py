@@ -27,3 +27,48 @@ def maximum(arr):
     return max
 list.sort()
 print('max =', list[-1])
+
+# не совсем понял что вы хотели сделать таким решением(
+# В max да, суть верна
+# Вариант 1
+# сортировка выбором
+def minimum(arr):
+    min_num = arr[0]
+    for i in range(len(arr)):
+        if arr[i] < min_num:
+            min_num = arr[i]
+    return min_num
+
+
+def maximum(arr):
+    max_num = arr[0]
+    for i in range(len(arr)):
+        if arr[i] > max_num:
+            max_num = arr[i]
+    return max_num
+
+print('\nСортировка выбором')
+print('min =', minimum([4,6,2,1,9,63,-134,566]))
+print('max =', maximum([4,6,2,1,9,63,-134,566]))
+
+
+# Вариант 2
+# используем сортировку пузырьком
+def bubblesort(l):
+    for i in range(len(l)-1):
+        for j in range(len(l)-i-1):
+            if l[j] > l[j+1]:
+                l[j], l[j+1] = l[j+1], l[j]
+    return l
+
+# Максимум - это последний элемент отсортированного списка
+def maximum(arr):
+    return bubblesort(arr)[-1]
+
+ # Минимум - это первый элемент отсортированного списка
+def minimum(arr):
+    return bubblesort(arr)[0]
+
+print('\nСортировка пузырьком')
+print('min =', minimum([4,6,2,1,9,63,-134,566]))
+print('max =', maximum([4,6,2,1,9,63,-134,566]))
